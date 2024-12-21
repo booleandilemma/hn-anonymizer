@@ -1,0 +1,19 @@
+{
+  "name": "hn-anonymizer",
+  "version": "1.0.0",
+  "description": "Anonymize your Hacker News username",
+  "main": "hn-anonymizer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/booleandilemma/hn-blacklist.git"
+  },
+  "author": "booleandilemma",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/booleandilemma/hn-blacklist/issues"
+  },
+  "homepage": "https://github.com/booleandilemma/hn-anonymizer#readme"
+}
