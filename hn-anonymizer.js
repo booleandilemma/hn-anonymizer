@@ -13,7 +13,8 @@ const UserScriptName = 'HN Anonymizer';
 
 /**
  * Logs an info message to the console.
- * @param {string} message - Specifies the message to log.
+ * @param {string} message Specifies the message to log.
+ * @returns {undefined}
  */
 function logInfo(message) {
   console.info(`${UserScriptName}: ${message}`);
@@ -21,38 +22,38 @@ function logInfo(message) {
 
 /**
  * Logs a warning message to the console.
- * @param {string} message - Specifies the message to log.
+ * @param {string} message Specifies the message to log.
+ * @returns {undefined}
  */
 function logWarning(message) {
   console.warn(`${UserScriptName}: ${message}`);
 }
 
 function main() {
-
   // Customize your username with this variable, or leave it empty for asterisks.
-  const customUsername = "b****";
+  const customUsername = 'b****';
 
   // Customize your profile url with this variable.
-  const customProfileUrl = "https://example.com";
+  const customProfileUrl = 'https://example.com';
 
-  const usernameElement = document.getElementById("me");
+  const usernameElement = document.getElementById('me');
 
   if (usernameElement == null) {
-    logWarning("No username element found.");
+    logWarning('No username element found.');
     return;
   }
 
-  if (customUsername !== "") {
+  if (customUsername !== '') {
     usernameElement.innerHTML = customUsername;
   } else {
-    usernameElement.innerHTML = "*****";
+    usernameElement.innerHTML = '*****';
   }
 
-  if (customProfileUrl !== "") {
-    usernameElement.setAttribute("href", customProfileUrl);
+  if (customProfileUrl !== '') {
+    usernameElement.setAttribute('href', customProfileUrl);
   }
 
-  logInfo("Username anonymized");
+  logInfo('Username anonymized');
 }
 
 main();
