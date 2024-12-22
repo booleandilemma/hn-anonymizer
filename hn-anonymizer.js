@@ -31,7 +31,7 @@ function logWarning(message) {
 
 function main() {
   // Customize your username with this variable, or leave it empty for asterisks.
-  const customUsername = '*****';
+  const customUsername = '';
 
   // Customize your profile url with this variable.
   const customProfileUrl = 'https://example.com';
