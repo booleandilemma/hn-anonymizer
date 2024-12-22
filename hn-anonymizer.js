@@ -9,6 +9,8 @@
 // @license      GPL-3.0
 // ==/UserScript==
 
+"use strict";
+
 const UserScriptName = 'HN Anonymizer';
 
 /**
