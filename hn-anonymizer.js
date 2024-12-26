@@ -13,17 +13,22 @@
 
 /* ========================== Configuration Info Starts Here ========================== */
 
-  /*
-   * Customize your username with this variable
-   * or leave it empty for asterisks.
-   */
-  const customUsername = "";
+/*
+ * Customize your username with this variable
+ * or leave it empty for asterisks.
+ */
+const customUsername = "";
 
-  /*
-   * Customize your profile url with this variable,
-   * or leave it blank to leave your profile url as is.
-   */
-  const customProfileUrl = "";
+/*
+ * Customize your profile url with this variable,
+ * or leave it blank to leave your profile url as is.
+ */
+const customProfileUrl = "";
+
+/*
+ * Customize your HN karma with this variable.
+ */
+const karma = "47974";
 
 /* ========================== Configuration Info Ends Here ========================== */
 
@@ -57,22 +62,33 @@ function main() {
 
   const usernameElement = document.getElementById("me");
 
-  if (usernameElement == null) {
-    logError("No username element found.");
-    return;
-  }
+  if (usernameElement != null) {
+    if (customUsername !== "") {
+      usernameElement.innerHTML = customUsername;
+    } else {
+      usernameElement.innerHTML = "*****";
+    }
 
-  if (customUsername !== "") {
-    usernameElement.innerHTML = customUsername;
+    logInfo("Username anonymized");
+
+    if (customProfileUrl !== "") {
+      usernameElement.setAttribute("href", customProfileUrl);
+
+      logInfo("Profile URL anonymized");
+    }
   } else {
-    usernameElement.innerHTML = "*****";
+    logError("No username element found.");
   }
 
-  if (customProfileUrl !== "") {
-    usernameElement.setAttribute("href", customProfileUrl);
-  }
+  const karmaElement = document.getElementById("karma");
 
-  logInfo("Username anonymized");
+  if (karmaElement != null) {
+    karmaElement.innerText = karma;
+
+    logInfo("Karma anonymized");
+  } else {
+    logError("No karma element found.");
+  }
 }
 
 main();
