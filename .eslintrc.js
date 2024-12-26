@@ -12,6 +12,13 @@ module.exports = {
       'class-methods-use-this': 'off',
       'no-plusplus': 'off',
       'no-console': 'off',
+      'linebreak-style': 'off',
+      'quotes': 'off',
+      'camelcase': 'off',
+      'max-classes-per-file': 'off',
+      'strict': 'off',
+      'prefer-destructuring': 'off',
+      'no-param-reassign': 'off',
     }
   }
   ],
