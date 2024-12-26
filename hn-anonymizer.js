@@ -7,6 +7,7 @@
 // @version      1.0.0
 // @grant        none
 // @license      GPL-3.0
+// @namespace https://greasyfork.org/users/777592
 // ==/UserScript==
 
 "use strict";
