@@ -6,6 +6,8 @@ HN Anonymizer is for you.
 
 HN Anonymizer is a [userscript](https://en.wikipedia.org/wiki/Userscript) which can be run with tools like Greasemonkey and Tampermonkey right in your browser.
 
+Find it on [Greasy Fork](https://greasyfork.org/en/scripts/521891-hn-anonymizer), or copy and paste it right from here.
+
 HN Anonymizer lets you anonymize your:
 
 * Username
