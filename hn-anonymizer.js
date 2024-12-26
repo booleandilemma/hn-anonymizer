@@ -43,14 +43,6 @@ function logInfo(message) {
 }
 
 /**
- * Logs a warning message to the console.
- * @param {string} message - Specifies the message to log.
- */
-function logWarning(message) {
-  console.warn(`${UserScriptName}: ${message}`);
-}
-
-/**
  * Logs an error message to the console.
  * @param {string} message - Specifies the message to log.
  */
@@ -59,7 +51,6 @@ function logError(message) {
 }
 
 function main() {
-
   const usernameElement = document.getElementById("me");
 
   if (usernameElement != null) {
@@ -88,6 +79,23 @@ function main() {
     logInfo("Karma anonymized");
   } else {
     logError("No karma element found.");
+  }
+
+  const asteriskElements = document.querySelectorAll('[color="#ff6600"]');
+
+  for (let i = 0; i < asteriskElements.length; i++) {
+    const asteriskElement = asteriskElements[i];
+
+    const voteArrow = document.createElement("div");
+    voteArrow.classList.add("votearrow");
+    voteArrow.title = "upvote";
+
+    asteriskElement.innerText = "";
+    asteriskElement.appendChild(voteArrow);
+  }
+
+  if (asteriskElements.length > 0) {
+    logInfo("Comments anonymized");
   }
 }
 
