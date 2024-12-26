@@ -3,7 +3,7 @@
 // @author       booleandilemma
 // @description  Anonymize your Hacker News username
 // @homepageURL  https://github.com/booleandilemma/hn-anonymizer
-// @include      https://news.ycombinator.com/*
+// @match        https://news.ycombinator.com/*
 // @version      1.0.0
 // @grant        none
 // @license      GPL-3.0
@@ -11,12 +11,27 @@
 
 "use strict";
 
-const UserScriptName = 'HN Anonymizer';
+/* ========================== Configuration Info Starts Here ========================== */
+
+  /*
+   * Customize your username with this variable
+   * or leave it empty for asterisks.
+   */
+  const customUsername = "";
+
+  /*
+   * Customize your profile url with this variable,
+   * or leave it blank to leave your profile url as is.
+   */
+  const customProfileUrl = "";
+
+/* ========================== Configuration Info Ends Here ========================== */
+
+const UserScriptName = "HN Anonymizer";
 
 /**
  * Logs an info message to the console.
- * @param {string} message Specifies the message to log.
- * @returns {undefined}
+ * @param {string} message - Specifies the message to log.
  */
 function logInfo(message) {
   console.info(`${UserScriptName}: ${message}`);
@@ -24,38 +39,40 @@ function logInfo(message) {
 
 /**
  * Logs a warning message to the console.
- * @param {string} message Specifies the message to log.
- * @returns {undefined}
+ * @param {string} message - Specifies the message to log.
  */
 function logWarning(message) {
   console.warn(`${UserScriptName}: ${message}`);
 }
 
+/**
+ * Logs an error message to the console.
+ * @param {string} message - Specifies the message to log.
+ */
+function logError(message) {
+  console.error(`${UserScriptName}: ${message}`);
+}
+
 function main() {
-  // Customize your username with this variable, or leave it empty for asterisks.
-  const customUsername = '';
 
-  // Customize your profile url with this variable.
-  const customProfileUrl = 'https://example.com';
-
-  const usernameElement = document.getElementById('me');
+  const usernameElement = document.getElementById("me");
 
   if (usernameElement == null) {
-    logWarning('No username element found.');
+    logError("No username element found.");
     return;
   }
 
-  if (customUsername !== '') {
+  if (customUsername !== "") {
     usernameElement.innerHTML = customUsername;
   } else {
-    usernameElement.innerHTML = '*****';
+    usernameElement.innerHTML = "*****";
   }
 
-  if (customProfileUrl !== '') {
-    usernameElement.setAttribute('href', customProfileUrl);
+  if (customProfileUrl !== "") {
+    usernameElement.setAttribute("href", customProfileUrl);
   }
 
-  logInfo('Username anonymized');
+  logInfo("Username anonymized");
 }
 
 main();
