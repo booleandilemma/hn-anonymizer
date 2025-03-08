@@ -37,7 +37,7 @@ const UserScriptName = "HN Anonymizer";
 
 /**
  * Logs an info message to the console.
- * @param {string} message - Specifies the message to log.
+ * @param {string} message Specifies the message to log.
  */
 function logInfo(message) {
   console.info(`${UserScriptName}: ${message}`);
@@ -45,7 +45,7 @@ function logInfo(message) {
 
 /**
  * Logs an error message to the console.
- * @param {string} message - Specifies the message to log.
+ * @param {string} message Specifies the message to log.
  */
 function logError(message) {
   console.error(`${UserScriptName}: ${message}`);

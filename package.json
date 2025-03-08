@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Anonymize your Hacker News username",
   "main": "hn-anonymizer.js",
+  "type": "module",
   "scripts": {
+    "format": "prettier --write hn-anonymizer.js",
+    "lint": "eslint hn-anonymizer.js",
+    "lint-fix": "eslint --fix hn-anonymizer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,8 +20,10 @@
     "url": "https://github.com/booleandilemma/hn-blacklist/issues"
   },
   "homepage": "https://github.com/booleandilemma/hn-anonymizer#readme",
-  "dependencies": {
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb-base": "^15.0.0"
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "eslint-config-eslint": "^11.0.0",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.5.3"
   }
 }
